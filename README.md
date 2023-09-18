@@ -19,7 +19,7 @@ pip install -r requirements.txt
 ``` 
 ## Executando aplicação
 
-Entre no ambiente criado, vá para o diretório app e execute o comando
+Entre no ambiente criado, vá para o diretório **app** e execute o comando
   ```bash
   flask run
   ```
