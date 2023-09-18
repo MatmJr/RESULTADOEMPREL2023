@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<form method="post">
+    <select name="cargo">
+        <option value="">Selecionar Cargo</option>
+        {% for cargo in cargos %}
+            <option value="{{ cargo }}" {% if cargo == cargo_selected %}selected{% endif %}>{{ cargo }}</option>
+        {% endfor %}
+    </select>
+    <input type="text" name="nome" placeholder="Digite o primeiro nome do candidato">
+    <input type="submit" value="Buscar">
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>Colocação</th>
+            <th>Inscrição</th>
+            <th>Nome</th>
+            <th>Nota 1</th>
+            <th>Nota 2</th>
+            <th>Nota Final</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for idx, row in notas.iterrows() %}
+        <tr>
+            <td>{{ idx + 1 }}</td>
+            <td>{{ row["Inscricao"] }}</td>
+            <td>{{ row["Nome"] }}</td>
+            <td>{{ row["Nota 1"] }}</td>
+            <td>{{ row["Nota 2"] }}</td>
+            <td>{{ row["Nota Final"] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

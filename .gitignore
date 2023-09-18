@@ -1,0 +1,8 @@
+venv
+
+./app/__pycache__
+cargo1-bruto.txt
+cargo2-bruto.txt
+cargo3-bruto.txt
+cargo4-bruto.txt
+classificação.ipynb
