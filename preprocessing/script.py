@@ -38,7 +38,7 @@ def createOrdenedMaskedDaset(arquivo, novo_nome:str):
     notas['Nota Final'] = notas['Nota Final'].astype(str).apply(clean_final_score).astype(float)
 
     #ordenar os resultados
-    classificacao = notas.sort_values(by='Nota Final', ascending=False).reset_index(drop=True)
+    classificacao = notas.sort_values(by=['Nota Final', 'Nota 2'], ascending=[False, False]).reset_index(drop=True)
 
     # Salvando o DataFrame em um novo arquivo .txt
     classificacao.to_csv(novo_nome+'.txt', sep=',', index=False)
